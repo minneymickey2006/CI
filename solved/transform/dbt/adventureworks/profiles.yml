@@ -1,0 +1,42 @@
+adventureworks:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: adventureworks
+      schema: dbo
+      threads: 4
+
+    ci:
+      type: postgres
+      host: "{{ env_var('DB_HOST') }}"
+      user: postgres
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: 5432
+      dbname: adventureworks
+      schema: dbo
+      threads: 4
+
+    preprod:
+      type: postgres
+      host: "{{ env_var('DB_HOST') }}"
+      user: postgres
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: 5432
+      dbname: adventureworks
+      schema: dbo
+      threads: 4
+
+    prod:
+      type: postgres
+      host: "{{ env_var('DB_HOST') }}"
+      user: postgres
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: 5432
+      dbname: adventureworks
+      schema: dbo
+      threads: 4

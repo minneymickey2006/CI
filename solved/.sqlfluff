@@ -1,0 +1,12 @@
+[sqlfluff]
+templater = dbt
+dialect = postgres
+exclude_rules = L016,L028,L027
+
+[sqlfluff:templater:dbt]
+project_dir = transform/dbt/adventureworks
+profiles_dir = transform/dbt/adventureworks
+target = ci
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
